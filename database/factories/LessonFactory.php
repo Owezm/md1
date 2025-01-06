@@ -2,7 +2,12 @@
 
 namespace Database\Factories;
 
+use App\Models\Course;
+use App\Models\Location;
+use App\Models\Season;
+use App\Models\Teacher;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use function League\Uri\UriTemplate\first;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Lesson>
@@ -17,7 +22,10 @@ class LessonFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'season_id' => Season::inRandomOrder()->first()->id,
+            'location_id' => Location::inRandomOrder()->first()->id,
+            'course_id' => Course::inRandomOrder()->first()->id,
+            'teacher_id' => null,
         ];
     }
 }

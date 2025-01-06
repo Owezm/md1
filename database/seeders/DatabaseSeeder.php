@@ -38,9 +38,6 @@ class DatabaseSeeder extends Seeder
         Teacher::factory(10)->create();
         Lesson::factory(30)->create();
         Registration::factory(200)->create();
-        Season::seeder(4)->create();
-        Location::seeder(15)->create();
-        Course::seeder(5)->create();
 
     }
 }

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Location;
+use App\Models\Season;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,8 +14,14 @@ class SeasonSeeder extends Seeder
      */
     public function run(): void
     {
-        foreach (['Winter', 'Fall', 'Summer', 'Spring'] as $obj) {
-            Location::create(['name' => $obj]);
+
+        $objs = ['Winter', 'Fall', 'Summer', 'Spring'];
+
+        foreach ($objs as $obj) {
+            Season::create(['name' => $obj]);
         }
+//        foreach (['Winter', 'Fall', 'Summer', 'Spring'] as $obj) {
+//            Season::create(['name' => $obj]);
+//        }
     }
 }

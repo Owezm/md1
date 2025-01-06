@@ -2,7 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\Lesson;
+use App\Models\Student;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use function League\Uri\UriTemplate\first;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Registration>
@@ -17,7 +20,8 @@ class RegistrationFactory extends Factory
     public function definition(): array
     {
         return [
-
+            'lesson_id' => Lesson::inRandomOrder()->first()->id,
+            'student_id' => Student::inRandomOrder()->first()->id,
         ];
     }
 }
