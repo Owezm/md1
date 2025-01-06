@@ -12,6 +12,6 @@ class Student extends Model
 
     public function  registration()
     {
-        return $this->hasMany(Registration::class)
+        return $this->hasMany(Registration::class);
     }
 }
