@@ -10,8 +10,5 @@ class Teacher extends Model
     /** @use HasFactory<\Database\Factories\TeacherFactory> */
     use HasFactory;
 
-    public function  lessons()
-    {
-        return $this->hasMany(Lesson::class)
-    }
+
 }
