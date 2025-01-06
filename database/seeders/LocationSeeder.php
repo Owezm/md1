@@ -14,7 +14,22 @@ class LocationSeeder extends Seeder
      */
     public function run(): void
     {
-        foreach (['UNW', 'PHT', 'ANW'] as $obj) {
+        $location_parent_id1 = Location::create([
+            'name' => 'UNW',
+            'parent_id' => null,
+        ]);
+
+        $location_parent_id2 = Location::create([
+            'name' => 'PRH',
+            'parent_id' => null,
+        ]);
+
+        $location_parent_id3 = Location::create([
+            'name' => 'ANW',
+            'parent_id' => null,
+        ]);
+
+        foreach (['A1', 'A2', 'A3', 'A4', 'B1', 'B2', 'B3'] as $obj) {
             Location::create(['name' => $obj]);
         }
     }
